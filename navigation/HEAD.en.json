@@ -10,6 +10,7 @@
             "about/intro",
             "about/why",
             "about/vision",
+            "about/roadmap",
             "about/faq"
           ]
         },
@@ -39,6 +40,7 @@
             "install/windows",
             "install/ubuntu",
             "install/suse",
+            "install/mise",
             "install/docker-container",
             "install/compile-source",
             "install/completion",
@@ -50,6 +52,7 @@
           "pages": [
             "start/cpp",
             "start/java",
+            "start/go",
             "start/android-app",
             "start/ios-app"
           ]
@@ -62,7 +65,8 @@
             "concepts/build-files",
             "concepts/dependencies",
             "concepts/visibility",
-            "concepts/platforms"
+            "concepts/platforms",
+            "concepts/runfiles"
           ]
         }
       ]
@@ -125,6 +129,24 @@
           ]
         },
         {
+          "group": "Platform guides",
+          "pages": [
+            "docs/bazel-and-cpp",
+            "docs/bazel-and-java",
+            "docs/bazel-and-javascript",
+            "docs/bazel-and-apple",
+            "docs/bazel-and-android",
+            "docs/android-ndk",
+            "docs/android-instrumentation-test",
+            "docs/android-build-performance",
+            "docs/cc-toolchain-config-reference",
+            "docs/configurable-attributes",
+            "docs/mobile-install",
+            "docs/sandboxing",
+            "docs/user-manual"
+          ]
+        },
+        {
           "group": "Tutorials",
           "pages": [
             "tutorials/cpp-use-cases",
@@ -166,7 +188,10 @@
           "group": "Query Language",
           "pages": [
             "query/language",
-            "query/quickstart"
+            "query/quickstart",
+            "query/guide",
+            "query/cquery",
+            "query/aquery"
           ]
         },
         {
@@ -196,7 +221,16 @@
         {
           "group": "Concepts",
           "pages": [
-            "extending/concepts"
+            "extending/concepts",
+            "extending/depsets",
+            "extending/macros",
+            "extending/legacy-macros",
+            "extending/aspects",
+            "extending/rules",
+            "extending/config",
+            "extending/platforms",
+            "extending/exec-groups",
+            "extending/auto-exec-groups"
           ]
         },
         {
@@ -221,6 +255,12 @@
           ]
         },
         {
+          "group": "Toolchains",
+          "pages": [
+            "extending/toolchains"
+          ]
+        },
+        {
           "group": "APIs",
           "pages": [
             "rules/lib/overview",
@@ -238,6 +278,22 @@
             "rules/lib/repo/http",
             "rules/lib/repo/local",
             "rules/lib/repo/utils"
+          ]
+        },
+        {
+          "group": "Module system",
+          "pages": [
+            "external/overview",
+            "external/module",
+            "external/extension",
+            "external/registry",
+            "external/lockfile",
+            "external/vendor",
+            "external/repo",
+            "external/mod-command",
+            "external/migration",
+            "external/migration_tool",
+            "external/faq"
           ]
         }
       ]
