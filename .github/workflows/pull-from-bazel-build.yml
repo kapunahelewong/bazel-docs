@@ -235,7 +235,7 @@ jobs:
             echo "upstream/docs directory does not exist (e.g. legacy PR where docs were in site/). Skipping rsync."
             exit 0
           fi
-          rsync -av --include='*/' --include='*.mdx' --include='*.md' --include='*.png' --include='*.jpg' --include='*.svg' --exclude='*' upstream/docs/ .
+          rsync -av --delete-after --include='*/' --include='*.mdx' --include='*.md' --include='*.png' --include='*.jpg' --include='*.svg' --exclude='*' upstream/docs/ .
           
       - name: Extract MDX reference docs
         if: ${{ inputs.is_internal_pr && inputs.trust_upstream_code && steps.docs-changes.outputs.should_run == 'true' }}
@@ -249,6 +249,10 @@ jobs:
       - name: Create versioned navigation
         if: ${{ steps.docs-changes.outputs.should_run == 'true' }}
         run: ./navigation.update.sh
+
+      - name: Clean up deleted docs from navigation
+        if: ${{ steps.docs-changes.outputs.should_run == 'true' }}
+        run: ./cleanup-deleted-docs.sh
 
       - name: Remove .mintignore entries from navigation files
         # TODO: versioned nav entries (e.g. 8.4.2/query/language) are not cleaned up here
